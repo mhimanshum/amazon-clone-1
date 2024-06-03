@@ -1,5 +1,5 @@
-import React from 'react'
-import "./footer.css"
+import React from 'react';
+import './footer.css';
 import { useState } from 'react';
 // import Divider from '@material-ui/core/Divider';
 
@@ -8,25 +8,23 @@ import amnLogo from '../../assets/amazon-logo.png';
 import logo from './amazon-logo.png';
 
 function Footer() {
-
-  const d = new Date()
+  const d = new Date();
   let year = d.getFullYear();
 
   //back to top-->
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
   const toggleVisible = () => {
     const scrolled = document.documentElement.scrollTop;
     if (scrolled > 300) {
-      setVisible(true)
-    }
-    else if (scrolled <= 300) {
-      setVisible(false)
+      setVisible(true);
+    } else if (scrolled <= 300) {
+      setVisible(false);
     }
   };
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: 'smooth',
     });
   };
   window.addEventListener('scroll', toggleVisible);
@@ -61,9 +59,7 @@ function Footer() {
           </ul>
         </div>
         <div className="sec">
-          <h5 className="foot-head">
-            Contact Us
-          </h5>
+          <h5 className="foot-head">Contact Us</h5>
           <ul className="text-gray-200 text-base">
             <li className="leading-5">
               <a href="#">Facebook</a>
@@ -129,14 +125,11 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className='footer-line'>
-      </div>
+      <div className="footer-line"></div>
       <div className="rest-footer-2">
-
         <img src={amnLogo} alt="logo"></img>
-        <div className='footer-countries'>
-          <div className='countries'>
-            
+        <div className="footer-countries">
+          <div className="countries">
             <li>Australia</li>
             <li>Brazil</li>
             <li>Canada</li>
@@ -154,16 +147,19 @@ function Footer() {
             <li>United Arab Emirates</li>
             <li>United Kingdoms</li>
             <li>United States</li>
-           
           </div>
         </div>
 
         <ul>
-          <li><img src={logo} alt="logo" /></li>
-          <li><span>English</span></li>
+          <li>
+            <img src={logo} alt="logo" />
+          </li>
+          <li>
+            <span>English</span>
+          </li>
         </ul>
       </div>
-      <div className='countries'>
+      <div className="countries">
         <ul>
           <li>Australia</li>
           <li>Brazil</li>
@@ -183,10 +179,9 @@ function Footer() {
           <li>United Kingdom</li>
           <li>United States</li>
         </ul>
-
       </div>
       <div className="base">
-        <div className='upper-base'>
+        <div className="upper-base">
           <div>
             <a href="#" className="font-bold mr-2">
               Conditions of Use
@@ -203,15 +198,13 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className='lower-base'>
+        <div className="lower-base">
           <span className="text-gray-400">
             &copy; 1996-{year}, Amazon.com, Inc. or its affiliates
           </span>
         </div>
-
       </div>
     </footer>
-
-  )
+  );
 }
-export default Footer
+export default Footer;

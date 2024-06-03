@@ -24,7 +24,7 @@ const stripePromise = loadStripe(
 );
 function App() {
   //to keep a check who is signed in/making a listner
-  const [{ }, dispatch] = useStateValue();
+  const [{}, dispatch] = useStateValue();
   //This State will keep Track of what is entered in the searchField
   const [searchField, setSearchField] = useState('');
 
@@ -58,49 +58,87 @@ function App() {
 
   return (
     <>
-
       <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/thanku" element={<>
-              <Header />
-              <Thanku />
-            </>} />
-            <Route path="/Payment" element={<>
-              <Header />
-              {/* wraps the payment elements,
+            <Route
+              path="/thanku"
+              element={
+                <>
+                  <Header />
+                  <Thanku />
+                </>
+              }
+            />
+            <Route
+              path="/Payment"
+              element={
+                <>
+                  <Header />
+                  {/* wraps the payment elements,
           no need to understand it */}
-              <Elements stripe={stripePromise}>
-                <Payment />
-              </Elements>
-            </>} />
+                  <Elements stripe={stripePromise}>
+                    <Payment />
+                  </Elements>
+                </>
+              }
+            />
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/checkout" element={<>
-              <Header />
-              <Checkout /></>} />
-            <Route path="/books-toys" element={<> <Header />
-              <Navbar />
-              <BookToys /></>} />
-            <Route path="/fashion-beauty" element={<>
-              <Header />
-              <Navbar />
-              <FashionBeauty />
-            </>} />
+            <Route
+              path="/checkout"
+              element={
+                <>
+                  <Header />
+                  <Checkout />
+                </>
+              }
+            />
+            <Route
+              path="/books-toys"
+              element={
+                <>
+                  {' '}
+                  <Header />
+                  <Navbar />
+                  <BookToys />
+                </>
+              }
+            />
+            <Route
+              path="/fashion-beauty"
+              element={
+                <>
+                  <Header />
+                  <Navbar />
+                  <FashionBeauty />
+                </>
+              }
+            />
 
-            <Route path="/electronics" element={<>
-              <Header />
-              <Navbar />
-              <Electronics />
-            </>} />
+            <Route
+              path="/electronics"
+              element={
+                <>
+                  <Header />
+                  <Navbar />
+                  <Electronics />
+                </>
+              }
+            />
 
-            <Route path="/" element={<>
-              <Header inputHandler={inputHandler} />
-              <Navbar />
-              <Home text={searchField} />
-              <AllCategories />
-            </>} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header inputHandler={inputHandler} />
+                  <Navbar />
+                  <Home text={searchField} />
+                  <AllCategories />
+                </>
+              }
+            />
           </Routes>
           <Footer />
         </div>
